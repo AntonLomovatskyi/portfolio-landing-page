@@ -25,7 +25,7 @@ export class ContactMeComponent {
     },
     {
       textValue: 'Follow me on',
-      link: 'https://github.com/RoffyMonsta/',
+      link: 'https://github.com/AntonLomovatskyi/',
       displayValue: 'GitHub'
     },
     {

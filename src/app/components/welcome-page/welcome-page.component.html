@@ -1,13 +1,26 @@
 <section class="section welcome-page" appScrollSection="welcome">
   <div class="welcome-page__general-info">
+    <span class="welcome-page__status">
+      <span class="welcome-page__status-dot"></span>
+      Available for new projects
+    </span>
+
+    <p class="welcome-page__intro">Hi there, my name is</p>
+
     <app-typewriter-welcome></app-typewriter-welcome>
-    
+
+    <h2 class="welcome-page__tagline">I build products for the web &amp; mobile.</h2>
+
     <div class="welcome-page__description">
-      <p>Hey there! I'm Anton Lomovatskyi, a passionate Software Engineer specializing in modern web and mobile development. I love building innovative solutions that make a real impact, from scalable web applications to cutting-edge mobile experiences.</p>
-      
+      <p>
+        I&rsquo;m Anton Lomovatskyi, a Software Engineer specializing in modern web and mobile
+        development. From scalable Angular &amp; React apps to AI-powered tools and cross-platform
+        mobile experiences, I love turning ideas into polished products that ship.
+      </p>
+
       <div class="welcome-page__cta">
-        <button (click)="scrollToSection('contact_me')" class="btn-primary">Get In Touch</button>
-        <button (click)="scrollToSection('projects_demo')" class="btn-secondary">View My Work</button>
+        <button (click)="scrollToSection('projects_demo')" class="btn-primary">View My Work</button>
+        <button (click)="scrollToSection('contact_me')" class="btn-secondary">Get In Touch</button>
       </div>
     </div>
   </div>

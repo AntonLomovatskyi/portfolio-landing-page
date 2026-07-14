@@ -75,6 +75,7 @@ export class AnimationUtils {
     this.observeElements('.tech-skill', 'animate-fade-in-up');
     this.observeElements('.work-card', 'animate-slide-in-left');
     this.observeElements('.about-me__section', 'animate-fade-in');
-    this.observeElements('.my-projects mat-expansion-panel', 'animate-scale-in');
+    this.observeElements('.my-projects .project-card', 'animate-scale-in');
+    this.observeElements('.my-projects .project-row', 'animate-fade-in-up');
   }
 }

@@ -1,112 +1,127 @@
 .welcome-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   position: relative;
-  
+
   &__general-info {
-    max-width: 800px;
+    max-width: 780px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--big-gap);
-    padding: var(--regular-gap);
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: var(--regular-gap) 0;
   }
-  
+
+  &__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--font-mono);
+    font-size: var(--small-font-size);
+    color: var(--text-secondary);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    backdrop-filter: var(--blur-sm);
+  }
+
+  &__status-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--accent-3);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent-3) 70%, transparent);
+    animation: statusPulse 2s ease-out infinite;
+  }
+
+  &__intro {
+    font-family: var(--font-mono);
+    font-size: var(--regular-font-size);
+    color: var(--accent-color);
+    letter-spacing: 0.02em;
+  }
+
+  &__tagline {
+    font-size: clamp(1.6rem, 4vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text-muted);
+    margin-top: -0.5rem;
+  }
+
   &__description {
     display: flex;
     flex-direction: column;
     gap: var(--regular-gap);
-    
+    margin-top: 0.5rem;
+
     p {
-      font-size: var(--big-font-size);
+      font-size: var(--regular-font-size);
       font-weight: 400;
       color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: var(--regular-gap);
+      line-height: 1.75;
+      max-width: 620px;
     }
   }
-  
+
   &__cta {
     display: flex;
     gap: 1rem;
-    margin-top: var(--regular-gap);
+    margin-top: 0.75rem;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    
-    .btn-primary {
-      background: var(--accent-color);
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      font-family: var(--font-family);
-      font-size: var(--regular-font-size);
-      cursor: pointer;
-      transition: all var(--transition-normal);
-      
-      &:hover {
-        background: var(--accent-hover);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-lg);
-      }
-    }
-    
+
     .btn-secondary {
       background: transparent;
-      color: var(--text-secondary);
-      border: 2px solid var(--glass-border);
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
+      color: var(--text-primary);
+      border: 1px solid var(--glass-border);
+      padding: 0.85rem 1.6rem;
+      border-radius: 0.7rem;
       font-weight: 600;
       font-family: var(--font-family);
       font-size: var(--regular-font-size);
       cursor: pointer;
       transition: all var(--transition-normal);
-      
+
       &:hover {
         border-color: var(--accent-color);
         color: var(--accent-color);
-        transform: translateY(-2px);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
       }
     }
   }
-  
-  app-typewriter-welcome {
-    height: auto;
-    min-height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
 
+  app-typewriter-welcome {
+    width: 100%;
+    display: block;
+  }
+}
+
+@keyframes statusPulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent-3) 65%, transparent); }
+  70% { box-shadow: 0 0 0 8px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
 }
 
 @media (max-width: 768px) {
   .welcome-page {
     &__general-info {
-      padding: var(--small-gap);
+      padding: var(--small-gap) 0;
     }
-    
-    &__description p {
-      font-size: var(--regular-font-size);
-    }
-    
+
     &__cta {
-      flex-direction: column;
-      align-items: center;
-      
+      width: 100%;
+
       .btn-primary,
       .btn-secondary {
-        width: 100%;
-        max-width: 280px;
+        flex: 1;
+        min-width: 140px;
       }
     }
   }

@@ -42,7 +42,7 @@
           "configurations": {
             "production": {
               "outputHashing": "none",
-              "deployUrl": "https://roffymonsta.github.io/portfolio-landing-page/"
+              "deployUrl": "https://antonlomovatskyi.github.io/portfolio-landing-page/"
             },
             "development": {
               "buildOptimizer": false,
